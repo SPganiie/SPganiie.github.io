@@ -29,6 +29,7 @@
         // Convenience function to setup a webcam
         const flip = false; // whether to flip the webcam
         webcam = new tmImage.Webcam(800, 800, flip); // width, height, flip
+        console.log(webcam)
         await webcam.setup(); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
@@ -50,8 +51,6 @@
     async function predict() {
         // predict can take in an image, video or canvas html element
         const prediction = await model.predict(webcam.canvas);
-        console.log(webcam.canvas);
-        console.log(typeof webcam.canvas);
         for (let i = 0; i < maxPredictions; i++) {
             const classPrediction =
                 prediction[i].className + ": " + prediction[i].probability.toFixed(2) * 100 +"%";
