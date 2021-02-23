@@ -59,6 +59,7 @@ const startStream = async (constraints) => {
   const stream = await navigator.mediaDevices.getUserMedia(constraints);
   handleStream(stream);
   await predict();
+  window.requestAnimationFrame(loop);
 };
 
 const handleStream = (stream) => {
@@ -74,7 +75,7 @@ async function predict() {
   console.log("video "+video)
         let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720);
   console.log(canvaz)
-  console.log(typeof canvaz)
+  console.log(canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720))
 //         const prediction = await model.predict(canvaz);
 //         for (let i = 0; i < maxPredictions; i++) {
 //             const classPrediction =
