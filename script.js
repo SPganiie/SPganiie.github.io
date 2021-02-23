@@ -71,8 +71,6 @@ const handleStream = (stream) => {
 };
 async function predict() {
         // predict can take in an image, video or canvas html element
-  console.log("canvas "+canvas)
-  console.log("video "+video)
         let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720);
   console.log(canvaz)
   console.log(canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720))
