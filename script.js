@@ -3,7 +3,7 @@ feather.replace();
 const controls = document.querySelector('.controls');
 const cameraOptions = document.querySelector('.video-options>select');
 const video = document.querySelector('video');
-const canvas = document.querySelector('canvas');
+const canvas = window.canvas = document.querySelector('canvas');
 const screenshotImage = document.querySelector('img');
 const buttons = [...controls.querySelectorAll('button')];
 let streamStarted = false;
@@ -70,6 +70,8 @@ const handleStream = (stream) => {
 };
 async function predict() {
         // predict can take in an image, video or canvas html element
+  console.log("canvas "+canvas)
+  console.log("video "+video)
         let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720);
   console.log(canvaz)
   console.log(typeof canvaz)
