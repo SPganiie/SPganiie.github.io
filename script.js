@@ -7,9 +7,6 @@ const canvas = document.querySelector('canvas');
 const screenshotImage = document.querySelector('img');
 const buttons = [...controls.querySelectorAll('button')];
 let streamStarted = false;
-canvas.width = 1280;
-canvas.height = 720;
-
 
 const [play, pause, screenshot] = buttons;
 
@@ -73,7 +70,7 @@ const handleStream = (stream) => {
 };
 async function predict() {
         // predict can take in an image, video or canvas html element
-        let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, canvas.width, canvas.height);
+        let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720);
   console.log(canvaz)
   console.log(typeof canvaz)
 //         const prediction = await model.predict(canvaz);
