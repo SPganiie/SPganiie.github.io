@@ -58,6 +58,7 @@ play.onclick = () => {
 const startStream = async (constraints) => {
   const stream = await navigator.mediaDevices.getUserMedia(constraints);
   handleStream(stream);
+  await predict();
 };
 
 const handleStream = (stream) => {
@@ -67,5 +68,14 @@ const handleStream = (stream) => {
   screenshot.classList.remove('d-none');
   streamStarted = true;
 };
-
+async function predict() {
+  console.log("okey")
+        // predict can take in an image, video or canvas html element
+//         const prediction = await model.predict(webcam.canvas);
+//         for (let i = 0; i < maxPredictions; i++) {
+//             const classPrediction =
+//                 prediction[i].className + ": " + prediction[i].probability.toFixed(2) * 100 +"%";
+//             labelContainer.childNodes[i].innerHTML = classPrediction;
+//         }
+    }
 getCameraSelection();
