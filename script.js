@@ -73,7 +73,7 @@ async function predict() {
         // predict can take in an image, video or canvas html element
         let canvaz = canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720);
   console.log(canvaz)
-  console.log(canvas.getContext('2d').drawImage(video, 0, 0, 1280, 720))
+  console.log(drawImage(video, 0, 0, 1280, 720))
 //         const prediction = await model.predict(canvaz);
 //         for (let i = 0; i < maxPredictions; i++) {
 //             const classPrediction =
