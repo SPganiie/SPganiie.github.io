@@ -1,5 +1,5 @@
 
-<!-- <div>Teachable Machine Image Model Hairstyle</div>
+<div>Teachable Machine Image Model Hairstyle</div>
 <button type="button" onclick="init()">Start</button>
 <div id="webcam-container"></div>
 <div id="label-container"></div>
@@ -29,7 +29,15 @@
         // Convenience function to setup a webcam
         const flip = false; // whether to flip the webcam
         webcam = new tmImage.Webcam(800, 800, flip); // width, height, flip
-        await webcam.setup(); // request access to the webcam
+        await webcam.setup(
+            options: MediaTrackConstraints = {
+                audio : false,
+                video : true,
+            facingMode: {
+              exact: 'environment'
+            }
+            }
+        ); // request access to the webcam
         await webcam.play();
         window.requestAnimationFrame(loop);
         // append elements to the DOM
@@ -56,8 +64,8 @@
             labelContainer.childNodes[i].innerHTML = classPrediction;
         }
     }
-</script> -->
-<!doctype html>
+</script>
+<!-- <!doctype html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -94,3 +102,4 @@
 <script src="script.js"></script>
 </body>
 </html>
+ -->
